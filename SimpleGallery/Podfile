@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SimpleGallery' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+    # Used to make the network layer and network Calls.
+    pod 'Alamofire'
+    
+    # Used for downloading and caching images from the web.
+    pod 'Kingfisher'
+    
+    # Used to create progress HUD.
+    pod 'SVProgressHUD'
+    
+    # Used for localization and in-app language switching.
+    pod 'Localize-Swift'
+
+end
