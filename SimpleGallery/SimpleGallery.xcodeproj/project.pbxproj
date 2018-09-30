@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5152EEB98CFD82907294AADA /* Pods_SimpleGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2302C036B483CF202E841A /* Pods_SimpleGallery.framework */; };
+		D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */; };
+		D41EAF6C2160A57900D7EEC1 /* GalleryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF6B2160A57900D7EEC1 /* GalleryPageViewController.swift */; };
+		D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF6D2160A67800D7EEC1 /* GalleryParentViewController.swift */; };
+		D41EAF702160A68E00D7EEC1 /* GalleryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF6F2160A68E00D7EEC1 /* GalleryListViewController.swift */; };
+		D41EAF722160A6A100D7EEC1 /* GalleryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */; };
 		D4B85242215E906E00D4DEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B85241215E906E00D4DEAD /* AppDelegate.swift */; };
-		D4B85244215E906E00D4DEAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B85243215E906E00D4DEAD /* ViewController.swift */; };
 		D4B85247215E906E00D4DEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B85245215E906E00D4DEAD /* Main.storyboard */; };
 		D4B85249215E906F00D4DEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B85248215E906F00D4DEAD /* Assets.xcassets */; };
 		D4B8524C215E906F00D4DEAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B8524A215E906F00D4DEAD /* LaunchScreen.storyboard */; };
@@ -17,16 +21,20 @@
 		D4DE96FF215F9D04000C06E8 /* ServerManagerCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE96FE215F9D04000C06E8 /* ServerManagerCalls.swift */; };
 		D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9700215F9D2B000C06E8 /* ServerManager.swift */; };
 		D4DE9704215F9D6F000C06E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9703215F9D6F000C06E8 /* Constants.swift */; };
-		D4DE9706215F9D8C000C06E8 /* AppMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9705215F9D8C000C06E8 /* AppMethods.swift */; };
+		D4DE9706215F9D8C000C06E8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9705215F9D8C000C06E8 /* Utilities.swift */; };
 		D4DE970D215F9EFA000C06E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DE970B215F9EFA000C06E8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		140BC468CA9E7212C4F6223F /* Pods-SimpleGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGallery/Pods-SimpleGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		1C445457EA2D213EF8CEFBBB /* Pods-SimpleGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGallery/Pods-SimpleGallery.release.xcconfig"; sourceTree = "<group>"; };
+		D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryContainerViewController.swift; sourceTree = "<group>"; };
+		D41EAF6B2160A57900D7EEC1 /* GalleryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPageViewController.swift; sourceTree = "<group>"; };
+		D41EAF6D2160A67800D7EEC1 /* GalleryParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryParentViewController.swift; sourceTree = "<group>"; };
+		D41EAF6F2160A68E00D7EEC1 /* GalleryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListViewController.swift; sourceTree = "<group>"; };
+		D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGridViewController.swift; sourceTree = "<group>"; };
 		D4B8523E215E906E00D4DEAD /* SimpleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B85241215E906E00D4DEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4B85243215E906E00D4DEAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D4B85246215E906E00D4DEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4B85248215E906F00D4DEAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B8524B215E906F00D4DEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,7 +43,7 @@
 		D4DE96FE215F9D04000C06E8 /* ServerManagerCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManagerCalls.swift; sourceTree = "<group>"; };
 		D4DE9700215F9D2B000C06E8 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		D4DE9703215F9D6F000C06E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D4DE9705215F9D8C000C06E8 /* AppMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMethods.swift; sourceTree = "<group>"; };
+		D4DE9705215F9D8C000C06E8 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D4DE970C215F9EFA000C06E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4DE970F215F9F22000C06E8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC2302C036B483CF202E841A /* Pods_SimpleGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +78,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D41EAF682160A4E400D7EEC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */,
+				D41EAF6B2160A57900D7EEC1 /* GalleryPageViewController.swift */,
+				D41EAF6D2160A67800D7EEC1 /* GalleryParentViewController.swift */,
+				D41EAF6F2160A68E00D7EEC1 /* GalleryListViewController.swift */,
+				D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D4B85235215E906E00D4DEAD = {
 			isa = PBXGroup;
 			children = (
@@ -91,10 +111,10 @@
 		D4B85240215E906E00D4DEAD /* SimpleGallery */ = {
 			isa = PBXGroup;
 			children = (
-				D4DE9702215F9D5B000C06E8 /* AppClasses */,
+				D41EAF682160A4E400D7EEC1 /* Controller */,
+				D4DE9702215F9D5B000C06E8 /* Utilities */,
 				D4DE96FB215F9CC1000C06E8 /* Network */,
 				D4B85241215E906E00D4DEAD /* AppDelegate.swift */,
-				D4B85243215E906E00D4DEAD /* ViewController.swift */,
 				D4B85245215E906E00D4DEAD /* Main.storyboard */,
 				D4B85248215E906F00D4DEAD /* Assets.xcassets */,
 				D4B8524A215E906F00D4DEAD /* LaunchScreen.storyboard */,
@@ -114,13 +134,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		D4DE9702215F9D5B000C06E8 /* AppClasses */ = {
+		D4DE9702215F9D5B000C06E8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				D4DE9703215F9D6F000C06E8 /* Constants.swift */,
-				D4DE9705215F9D8C000C06E8 /* AppMethods.swift */,
+				D4DE9705215F9D8C000C06E8 /* Utilities.swift */,
 			);
-			path = AppClasses;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,13 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */,
+				D41EAF702160A68E00D7EEC1 /* GalleryListViewController.swift in Sources */,
+				D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */,
 				D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */,
 				D4DE96FF215F9D04000C06E8 /* ServerManagerCalls.swift in Sources */,
-				D4B85244215E906E00D4DEAD /* ViewController.swift in Sources */,
 				D4DE96FD215F9CE2000C06E8 /* ServerManagerExtensions.swift in Sources */,
+				D41EAF722160A6A100D7EEC1 /* GalleryGridViewController.swift in Sources */,
 				D4B85242215E906E00D4DEAD /* AppDelegate.swift in Sources */,
 				D4DE9704215F9D6F000C06E8 /* Constants.swift in Sources */,
-				D4DE9706215F9D8C000C06E8 /* AppMethods.swift in Sources */,
+				D41EAF6C2160A57900D7EEC1 /* GalleryPageViewController.swift in Sources */,
+				D4DE9706215F9D8C000C06E8 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
