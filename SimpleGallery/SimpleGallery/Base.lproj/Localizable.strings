@@ -7,6 +7,8 @@
 */
 
 
+"SOMETHING_WENT_WRONG" = "Something went wrong";
+"OK" = "Ok";
 "GALLERY" = "Gallery";
 "LIST" = "List";
 "GRID" = "Grid";

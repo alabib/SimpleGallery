@@ -34,14 +34,11 @@ class ServerManager: NSObject
     var didFinishWithError: DidFinishWithErrorDelegate?
     
     //MARK: - HTTPHandling -
-    func httpConnect<A>(resource:Resource<A>, paramters:[String:Any]?, authentication:String?, complation: @escaping (A?, Any?) -> (), errorHandler: @escaping (ErrorCode, Any?) -> ())
+    func httpConnect<A>(resource:Resource<A>, paramters:[String:Any]?, complation: @escaping (A?, Any?) -> (), errorHandler: @escaping (ErrorCode, Any?) -> ())
     {
         
         let url = resource.url
-        if let auth = authentication
-        {
-            headers["Authorization"] = "bearer \(auth)"
-        }
+        headers[AUTHENTICATION_HEADER_NAME] = AUTHENTICATION_HEADER_VALUE
         request = Alamofire.request(url, method: resource.httpmethod, parameters: paramters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200..<500).responseJSON
             { response in
                 switch response.result

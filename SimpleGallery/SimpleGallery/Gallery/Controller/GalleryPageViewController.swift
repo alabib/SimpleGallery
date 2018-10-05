@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 enum LayoutSegue : String {
     case grid = "Grid"
@@ -35,7 +35,7 @@ class GalleryPageViewController: UIPageViewController {
         super.viewDidLoad()
         
         self.dataSource = self
-        
+        navigationItem.title = "GALLERY".localized()
         for subView in self.view.subviews {
             if subView is UIScrollView {
                 
@@ -47,13 +47,47 @@ class GalleryPageViewController: UIPageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if self.listViewController == nil {
-            self.performSegue(withIdentifier: LayoutSegue.list.rawValue, sender: self)
+        getGallery(withSection: "hot", sortingCriteria: "viral") { succeeded, response in
+            if succeeded {
+                
+                guard let gallery = response as? ImgurRoot else {return}
+                
+                print(gallery)
+                if self.listViewController == nil {
+                    self.performSegue(withIdentifier: LayoutSegue.list.rawValue, sender: self)
+                }
+                
+                if self.gridViewController == nil {
+                    self.performSegue(withIdentifier: LayoutSegue.grid.rawValue, sender: self)
+                }
+            }
         }
         
-        if self.gridViewController == nil {
-            self.performSegue(withIdentifier: LayoutSegue.grid.rawValue, sender: self)
+    }
+    
+    private func getGallery(withSection section: String, sortingCriteria: String, completion: @escaping (Bool, Any?) -> Void) {
+        
+        SVProgressHUD.show()
+        let serverManager = ServerManager()
+        serverManager.getGalleryWith(section: section, sortingCriteria: sortingCriteria)
+        serverManager.didFinish =
+            { json in
+                if let obj = json as? ImgurRoot
+                {
+                    completion(true,obj)
+                } else {
+                    completion(false,nil)
+                    showAlert(title: "", message: "SOMETHING_WENT_WRONG".localized(), viewController: self, closure: nil)
+                }
+                SVProgressHUD.dismiss()
         }
+        serverManager.didFinishWithError =
+            { code, err in
+                SVProgressHUD.dismiss()
+                completion(false,nil)
+                showAlert(title: "", message: "SOMETHING_WENT_WRONG".localized(), viewController: self, closure: nil)
+        }
+        
     }
     
     // MARK: - Navigation
