@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCollectionViewCell" id="Z2a-ia-0AZ" customClass="GalleryCollectionViewCell" customModule="SimpleGallery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-JA-6KA">
+                        <rect key="frame" x="8" y="8" width="384" height="184"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-cQ-Yaf">
+                                <rect key="frame" x="0.0" y="0.0" width="384" height="140"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tO-tV-m8h">
+                                <rect key="frame" x="0.0" y="140" width="384" height="44"/>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mcB-xd-mZz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJg-eX-3fs">
+                                <rect key="frame" x="0.0" y="0.0" width="384" height="140"/>
+                                <connections>
+                                    <action selector="openImageAction:" destination="Z2a-ia-0AZ" eventType="touchUpOutside" id="vub-HV-lbB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gJg-eX-3fs" firstAttribute="height" secondItem="cHx-cQ-Yaf" secondAttribute="height" id="28g-vl-Nup"/>
+                            <constraint firstAttribute="trailing" secondItem="cHx-cQ-Yaf" secondAttribute="trailing" id="A2Y-xX-pnw"/>
+                            <constraint firstItem="cHx-cQ-Yaf" firstAttribute="leading" secondItem="hbo-JA-6KA" secondAttribute="leading" id="HI5-sk-u0m"/>
+                            <constraint firstItem="gJg-eX-3fs" firstAttribute="width" secondItem="cHx-cQ-Yaf" secondAttribute="width" id="PBf-qW-JUR"/>
+                            <constraint firstItem="8tO-tV-m8h" firstAttribute="top" secondItem="cHx-cQ-Yaf" secondAttribute="bottom" id="bkt-1V-TcV"/>
+                            <constraint firstItem="gJg-eX-3fs" firstAttribute="centerX" secondItem="cHx-cQ-Yaf" secondAttribute="centerX" id="dH4-F7-K9L"/>
+                            <constraint firstItem="8tO-tV-m8h" firstAttribute="leading" secondItem="hbo-JA-6KA" secondAttribute="leading" id="ewL-jo-d5X"/>
+                            <constraint firstItem="cHx-cQ-Yaf" firstAttribute="top" secondItem="hbo-JA-6KA" secondAttribute="top" id="h3C-q9-cxW"/>
+                            <constraint firstItem="gJg-eX-3fs" firstAttribute="centerY" secondItem="cHx-cQ-Yaf" secondAttribute="centerY" id="kDP-Vg-bKh"/>
+                            <constraint firstAttribute="bottom" secondItem="8tO-tV-m8h" secondAttribute="bottom" id="lpJ-kj-s9a"/>
+                            <constraint firstAttribute="trailing" secondItem="8tO-tV-m8h" secondAttribute="trailing" id="wyf-Ao-5HU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hbo-JA-6KA" firstAttribute="leading" secondItem="Z2a-ia-0AZ" secondAttribute="leading" constant="8" id="47I-R4-nc2"/>
+                <constraint firstItem="hbo-JA-6KA" firstAttribute="top" secondItem="Z2a-ia-0AZ" secondAttribute="top" constant="8" id="UwU-wu-zF2"/>
+                <constraint firstAttribute="bottom" secondItem="hbo-JA-6KA" secondAttribute="bottom" constant="8" id="eJm-i8-kpH"/>
+                <constraint firstAttribute="trailing" secondItem="hbo-JA-6KA" secondAttribute="trailing" constant="8" id="sTp-fA-JPb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="YEI-WX-o0f"/>
+            <connections>
+                <outlet property="containerView" destination="hbo-JA-6KA" id="uoM-jd-VdY"/>
+                <outlet property="descriptionLabel" destination="8tO-tV-m8h" id="ihl-Wq-qOC"/>
+                <outlet property="galleryImageView" destination="cHx-cQ-Yaf" id="5Xb-ex-Adu"/>
+                <outlet property="openImageButton" destination="gJg-eX-3fs" id="h5c-iP-NQl"/>
+            </connections>
+            <point key="canvasLocation" x="13" y="86"/>
+        </collectionViewCell>
+    </objects>
+</document>

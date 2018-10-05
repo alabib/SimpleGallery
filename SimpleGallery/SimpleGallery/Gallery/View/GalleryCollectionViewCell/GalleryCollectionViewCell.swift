@@ -1,28 +1,26 @@
 //
-//  GalleryTableViewCell.swift
+//  GalleryCollectionViewCell.swift
 //  SimpleGallery
 //
-//  Created by Ahmed Labib on 10/5/18.
+//  Created by Ahmed Labib on 10/6/18.
 //  Copyright © 2018 Ahmed Labib. All rights reserved.
 //
 
 import UIKit
 
-class GalleryTableViewCell: UITableViewCell {
+class GalleryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var galleryImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var openImageButton: UIButton!
     
+    var imageViewHeight : CGFloat! = CGFloat(integerLiteral: 0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupShadowFor(containerView)
         setupRoundedCornerFor(containerView)
-    }
-    
-    @IBAction func openImageAction(_ sender: Any) {
-        
     }
     
     func configCell(with imgurImage: ImgurImage!) {
@@ -34,9 +32,14 @@ class GalleryTableViewCell: UITableViewCell {
         }
         
         if let imageUrlString = imgurImage.link {
-
-            setImageOfUrlStr(str: imageUrlString, imageV: galleryImageView, completionHandler: nil)
+            
+            setImageOfUrlStr(str: imageUrlString, imageV: galleryImageView){ image in 
+                self.imageViewHeight = image?.size.height
+            }
         }
     }
     
+    @IBAction func openImageAction(_ sender: Any) {
+        
+    }
 }

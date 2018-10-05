@@ -10,21 +10,34 @@ import UIKit
 
 class GalleryGridViewController: GalleryParentViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let collectionViewCellIdentifier = "GalleryCollectionViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.register(UINib.init(nibName: collectionViewCellIdentifier, bundle: Bundle.main), forCellWithReuseIdentifier: collectionViewCellIdentifier)
+        collectionView.dataSource = self
+        collectionView.reloadData()
+        
+    }
+
+}
+
+
+extension GalleryGridViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return galleryImages.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? GalleryCollectionViewCell else { fatalError() }
+        let ImageObject = galleryImages[indexPath.row]
+        cell.configCell(with: ImageObject)
+        return cell
     }
-    */
-
+    
 }

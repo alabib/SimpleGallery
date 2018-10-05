@@ -19,8 +19,8 @@ class GalleryListViewController: GalleryParentViewController {
         
         tableView.register(UINib.init(nibName: tableViewCellIdentifier, bundle: Bundle.main), forCellReuseIdentifier: tableViewCellIdentifier)
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 130
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 200
         self.animateTable()
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self.tableView, selector: #selector(UITableView.reloadData), name: UIDevice.orientationDidChangeNotification, object: nil)

@@ -108,8 +108,8 @@ class GalleryPageViewController: UIPageViewController {
         }
         
         if segue.identifier == LayoutSegue.grid.rawValue {
-            self.listViewController.gallery = sender as? ImgurRoot
             self.gridViewController = segue.destination as? GalleryGridViewController
+            self.gridViewController.gallery = sender as? ImgurRoot
         }
     }
 }
