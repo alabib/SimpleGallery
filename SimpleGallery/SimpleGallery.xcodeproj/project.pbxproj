@@ -13,6 +13,8 @@
 		D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF6D2160A67800D7EEC1 /* GalleryParentViewController.swift */; };
 		D41EAF702160A68E00D7EEC1 /* GalleryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF6F2160A68E00D7EEC1 /* GalleryListViewController.swift */; };
 		D41EAF722160A6A100D7EEC1 /* GalleryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */; };
+		D47921662167C6E60020D5A4 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47921652167C6E60020D5A4 /* GalleryTableViewCell.swift */; };
+		D47921682167C6F60020D5A4 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47921672167C6F60020D5A4 /* GalleryTableViewCell.xib */; };
 		D4B85242215E906E00D4DEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B85241215E906E00D4DEAD /* AppDelegate.swift */; };
 		D4B85247215E906E00D4DEAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B85245215E906E00D4DEAD /* Main.storyboard */; };
 		D4B85249215E906F00D4DEAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B85248215E906F00D4DEAD /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		D41EAF6D2160A67800D7EEC1 /* GalleryParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryParentViewController.swift; sourceTree = "<group>"; };
 		D41EAF6F2160A68E00D7EEC1 /* GalleryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListViewController.swift; sourceTree = "<group>"; };
 		D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGridViewController.swift; sourceTree = "<group>"; };
+		D47921652167C6E60020D5A4 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
+		D47921672167C6F60020D5A4 /* GalleryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryTableViewCell.xib; sourceTree = "<group>"; };
 		D4B8523E215E906E00D4DEAD /* SimpleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B85241215E906E00D4DEAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4B85246215E906E00D4DEAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +104,23 @@
 				D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D424ED462167E6C800F6DAFF /* GalleryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D47921652167C6E60020D5A4 /* GalleryTableViewCell.swift */,
+				D47921672167C6F60020D5A4 /* GalleryTableViewCell.xib */,
+			);
+			path = GalleryTableViewCell;
+			sourceTree = "<group>";
+		};
+		D47921642167C6B50020D5A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D424ED462167E6C800F6DAFF /* GalleryTableViewCell */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D4B85235215E906E00D4DEAD = {
@@ -172,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				D41EAF682160A4E400D7EEC1 /* Controller */,
+				D47921642167C6B50020D5A4 /* View */,
 				D4F7000F21675F8900DA3DBB /* Model */,
 			);
 			path = Gallery;
@@ -240,6 +262,7 @@
 			files = (
 				D4B8524C215E906F00D4DEAD /* LaunchScreen.storyboard in Resources */,
 				D4DE970D215F9EFA000C06E8 /* Localizable.strings in Resources */,
+				D47921682167C6F60020D5A4 /* GalleryTableViewCell.xib in Resources */,
 				D4B85249215E906F00D4DEAD /* Assets.xcassets in Resources */,
 				D4B85247215E906E00D4DEAD /* Main.storyboard in Resources */,
 			);
@@ -307,6 +330,7 @@
 			files = (
 				D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */,
 				D41EAF702160A68E00D7EEC1 /* GalleryListViewController.swift in Sources */,
+				D47921662167C6E60020D5A4 /* GalleryTableViewCell.swift in Sources */,
 				D4F7001A21675FBA00DA3DBB /* ImgurData.swift in Sources */,
 				D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */,
 				D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */,

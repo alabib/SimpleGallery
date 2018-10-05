@@ -10,21 +10,28 @@ import UIKit
 
 class GalleryParentViewController: UIViewController {
 
+    
+    var gallery : ImgurRoot?
+    var galleryData : [ImgurData]?
+    var galleryImages = [ImgurImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if gallery != nil {
+            guard let galleryData  = (gallery?.data.filter{$0.images.count > 0})else {return}
+            
+            for data in galleryData {
+                for image in data.images {
+                    if !image.animated {
+                        galleryImages.append(image)
+                    }
+                }
+            }
+        } else {
+            showAlert(title: "", message: "SOMETHING_WENT_WRONG".localized(), viewController: self, closure: nil)
+            return
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

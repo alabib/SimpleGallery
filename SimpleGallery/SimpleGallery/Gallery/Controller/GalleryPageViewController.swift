@@ -52,13 +52,12 @@ class GalleryPageViewController: UIPageViewController {
                 
                 guard let gallery = response as? ImgurRoot else {return}
                 
-                print(gallery)
                 if self.listViewController == nil {
-                    self.performSegue(withIdentifier: LayoutSegue.list.rawValue, sender: self)
+                    self.performSegue(withIdentifier: LayoutSegue.list.rawValue, sender: gallery)
                 }
                 
                 if self.gridViewController == nil {
-                    self.performSegue(withIdentifier: LayoutSegue.grid.rawValue, sender: self)
+                    self.performSegue(withIdentifier: LayoutSegue.grid.rawValue, sender: gallery)
                 }
             }
         }
@@ -104,13 +103,13 @@ class GalleryPageViewController: UIPageViewController {
         
         if segue.identifier == LayoutSegue.list.rawValue {
             self.listViewController = segue.destination as? GalleryListViewController
+            self.listViewController.gallery = sender as? ImgurRoot
             self.setViewControllers([self.listViewController], direction: .forward, animated: false, completion: nil)
-            
         }
         
         if segue.identifier == LayoutSegue.grid.rawValue {
+            self.listViewController.gallery = sender as? ImgurRoot
             self.gridViewController = segue.destination as? GalleryGridViewController
-            
         }
     }
 }

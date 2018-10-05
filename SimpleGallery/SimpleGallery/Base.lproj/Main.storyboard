@@ -108,9 +108,24 @@
                     <view key="view" contentMode="scaleToFill" id="TNY-TY-6sh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sKk-eC-9fG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sKk-eC-9fG" firstAttribute="leading" secondItem="3gp-AQ-FYA" secondAttribute="leading" id="G2j-3r-eCz"/>
+                            <constraint firstItem="3gp-AQ-FYA" firstAttribute="trailing" secondItem="sKk-eC-9fG" secondAttribute="trailing" id="KxS-1L-xVh"/>
+                            <constraint firstItem="sKk-eC-9fG" firstAttribute="top" secondItem="3gp-AQ-FYA" secondAttribute="top" id="c2l-Mj-Ac6"/>
+                            <constraint firstItem="3gp-AQ-FYA" firstAttribute="bottom" secondItem="sKk-eC-9fG" secondAttribute="bottom" id="pKz-uY-D1y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3gp-AQ-FYA"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sKk-eC-9fG" id="oau-jP-hMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C50-Di-ILu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
