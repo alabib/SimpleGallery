@@ -17,38 +17,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-VO-bQK">
+                                <rect key="frame" x="306" y="72" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showViralAction:" destination="bYm-uC-5jM" eventType="valueChanged" id="atj-tT-O6H"/>
+                                </connections>
+                            </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PcL-dO-lFh">
-                                <rect key="frame" x="20" y="76" width="335" height="29"/>
+                                <rect key="frame" x="20" y="111" width="335" height="29"/>
                                 <segments>
                                     <segment title="List"/>
-                                    <segment title="Staggered"/>
+                                    <segment title="Grid"/>
                                 </segments>
                                 <connections>
                                     <action selector="layoutChanged:" destination="bYm-uC-5jM" eventType="valueChanged" id="JD9-BG-d9w"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTT-4Q-8Wl">
-                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <rect key="frame" x="0.0" y="147" width="375" height="520"/>
                                 <connections>
                                     <segue destination="4ZZ-bz-auj" kind="embed" id="D1z-h1-Uie"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Viral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIJ-Sd-Uah">
+                                <rect key="frame" x="20" y="77" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wt3-VO-bQK" firstAttribute="top" secondItem="icc-mA-MWk" secondAttribute="top" constant="8" id="0Wh-yg-gmE"/>
                             <constraint firstItem="PcL-dO-lFh" firstAttribute="leading" secondItem="icc-mA-MWk" secondAttribute="leading" constant="20" id="3zN-4C-nsl"/>
+                            <constraint firstItem="dIJ-Sd-Uah" firstAttribute="centerY" secondItem="wt3-VO-bQK" secondAttribute="centerY" id="5jv-JW-hxe"/>
+                            <constraint firstItem="dIJ-Sd-Uah" firstAttribute="leading" secondItem="PcL-dO-lFh" secondAttribute="leading" id="6iU-gT-EHz"/>
                             <constraint firstItem="pTT-4Q-8Wl" firstAttribute="top" secondItem="PcL-dO-lFh" secondAttribute="bottom" constant="8" id="IYv-gP-RsK"/>
+                            <constraint firstItem="wt3-VO-bQK" firstAttribute="trailing" secondItem="PcL-dO-lFh" secondAttribute="trailing" id="KU1-Cd-Is7"/>
                             <constraint firstItem="pTT-4Q-8Wl" firstAttribute="leading" secondItem="icc-mA-MWk" secondAttribute="leading" id="Lt2-Z0-Agg"/>
                             <constraint firstItem="icc-mA-MWk" firstAttribute="trailing" secondItem="pTT-4Q-8Wl" secondAttribute="trailing" id="T3L-M2-VAc"/>
+                            <constraint firstItem="PcL-dO-lFh" firstAttribute="top" secondItem="wt3-VO-bQK" secondAttribute="bottom" constant="8" id="aq0-8w-iYe"/>
                             <constraint firstItem="icc-mA-MWk" firstAttribute="trailing" secondItem="PcL-dO-lFh" secondAttribute="trailing" constant="20" id="ctA-hj-tiQ"/>
                             <constraint firstItem="icc-mA-MWk" firstAttribute="bottom" secondItem="pTT-4Q-8Wl" secondAttribute="bottom" id="mVJ-fj-P61"/>
-                            <constraint firstItem="PcL-dO-lFh" firstAttribute="top" secondItem="icc-mA-MWk" secondAttribute="top" constant="12" id="qdi-w0-Xdq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="icc-mA-MWk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Q6R-ch-hSf"/>
+                    <navigationItem key="navigationItem" id="Q6R-ch-hSf">
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="ugt-bD-bOh">
+                            <connections>
+                                <action selector="filterAction:" destination="bYm-uC-5jM" id="ZuU-Ib-TtB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="layoutSegmentedControl" destination="PcL-dO-lFh" id="kTU-aO-e7m"/>
+                        <outlet property="viralSwitch" destination="wt3-VO-bQK" id="Krd-yz-dbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1f-Zp-ISZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,17 +121,17 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z1d-NS-lro">
-                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GnN-2y-xwC">
-                                        <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                     </collectionViewCell>

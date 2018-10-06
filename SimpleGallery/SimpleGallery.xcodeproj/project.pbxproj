@@ -33,6 +33,7 @@
 		D4F7001A21675FBA00DA3DBB /* ImgurData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001421675FBA00DA3DBB /* ImgurData.swift */; };
 		D4F7001B21675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */; };
 		D4F7001C21675FBA00DA3DBB /* ImgurProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */; };
+		D4FC57A82168BEE400ED42BF /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		D4F7001421675FBA00DA3DBB /* ImgurData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurData.swift; sourceTree = "<group>"; };
 		D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurDescriptionAnnotation.swift; sourceTree = "<group>"; };
 		D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurProcessing.swift; sourceTree = "<group>"; };
+		D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
 		DC2302C036B483CF202E841A /* Pods_SimpleGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 		D47921642167C6B50020D5A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4FC57A62168BEC500ED42BF /* Layouts */,
 				D496F58A216818FE002221B1 /* GalleryCollectionViewCell */,
 				D424ED462167E6C800F6DAFF /* GalleryTableViewCell */,
 			);
@@ -159,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				D4F7001021675F9D00DA3DBB /* Gallery */,
-				D4DE9702215F9D5B000C06E8 /* Utilities */,
-				D4DE96FB215F9CC1000C06E8 /* Network */,
 				D4B85241215E906E00D4DEAD /* AppDelegate.swift */,
 				D4B85245215E906E00D4DEAD /* Main.storyboard */,
 				D4B85248215E906F00D4DEAD /* Assets.xcassets */,
@@ -206,11 +207,21 @@
 		D4F7001021675F9D00DA3DBB /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
+				D4DE96FB215F9CC1000C06E8 /* Network */,
+				D4DE9702215F9D5B000C06E8 /* Utilities */,
 				D41EAF682160A4E400D7EEC1 /* Controller */,
 				D47921642167C6B50020D5A4 /* View */,
 				D4F7000F21675F8900DA3DBB /* Model */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		D4FC57A62168BEC500ED42BF /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +361,7 @@
 				D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */,
 				D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */,
 				D4DE96FF215F9D04000C06E8 /* ServerManagerCalls.swift in Sources */,
+				D4FC57A82168BEE400ED42BF /* GridFlowLayout.swift in Sources */,
 				D4DE96FD215F9CE2000C06E8 /* ServerManagerExtensions.swift in Sources */,
 				D4F7001721675FBA00DA3DBB /* ImgurRoot.swift in Sources */,
 				D4F7001821675FBA00DA3DBB /* ImgurTag.swift in Sources */,

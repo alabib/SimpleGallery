@@ -15,6 +15,12 @@ enum LayoutSegue : String {
     case None = ""
 }
 
+enum ImgurFilterSections : String {
+    case hot = "hot"
+    case top = "top"
+    case None = ""
+}
+
 // MARK: - GalleryPageViewControllerSegue
 
 class GalleryPageViewControllerSegue : UIStoryboardSegue {
@@ -28,12 +34,12 @@ class GalleryPageViewControllerSegue : UIStoryboardSegue {
 
 class GalleryPageViewController: UIPageViewController {
     
+    var stationContainerViewController : GalleryContainerViewController!
     var listViewController : GalleryListViewController!
     var gridViewController : GalleryGridViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.dataSource = self
         navigationItem.title = "GALLERY".localized()
         for subView in self.view.subviews {
@@ -47,7 +53,7 @@ class GalleryPageViewController: UIPageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getGallery(withSection: "hot", sortingCriteria: "viral") { succeeded, response in
+        getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { succeeded, response in
             if succeeded {
                 
                 guard let gallery = response as? ImgurRoot else {return}
@@ -64,11 +70,11 @@ class GalleryPageViewController: UIPageViewController {
         
     }
     
-    private func getGallery(withSection section: String, sortingCriteria: String, completion: @escaping (Bool, Any?) -> Void) {
+    private func getGallery(withSection section: String, showViral: Bool, completion: @escaping (Bool, Any?) -> Void) {
         
         SVProgressHUD.show()
         let serverManager = ServerManager()
-        serverManager.getGalleryWith(section: section, sortingCriteria: sortingCriteria)
+        serverManager.getGalleryWith(section: section, showViral: showViral)
         serverManager.didFinish =
             { json in
                 if let obj = json as? ImgurRoot
@@ -92,8 +98,7 @@ class GalleryPageViewController: UIPageViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let stationContainerViewController = self.parent as! GalleryContainerViewController
+        stationContainerViewController = self.parent as? GalleryContainerViewController
         stationContainerViewController.switchView = {
             
             let viewController : GalleryParentViewController! = self.viewControllers![0] == self.listViewController ? self.gridViewController : self.listViewController
@@ -101,15 +106,34 @@ class GalleryPageViewController: UIPageViewController {
             self.setViewControllers([viewController], direction: direction, animated: true, completion: nil)
         }
         
+        stationContainerViewController.filterWith = { section, showViral in
+            self.getGallery(withSection: section, showViral: showViral) { succeeded, response in
+                if succeeded {
+                    
+                    guard let gallery = response as? ImgurRoot else {return}
+                    
+                    if self.listViewController != nil {
+                        self.listViewController.prepareDataSource(WithGallery: gallery)
+                        self.listViewController.loadData()
+                    }
+                    
+                    if self.gridViewController != nil {
+                        self.gridViewController.prepareDataSource(WithGallery: gallery)
+                        self.gridViewController.loadData()
+                    }
+                }
+            }
+        }
+        
         if segue.identifier == LayoutSegue.list.rawValue {
             self.listViewController = segue.destination as? GalleryListViewController
-            self.listViewController.gallery = sender as? ImgurRoot
+            self.listViewController.prepareDataSource(WithGallery: sender as? ImgurRoot)
             self.setViewControllers([self.listViewController], direction: .forward, animated: false, completion: nil)
         }
         
         if segue.identifier == LayoutSegue.grid.rawValue {
             self.gridViewController = segue.destination as? GalleryGridViewController
-            self.gridViewController.gallery = sender as? ImgurRoot
+            self.gridViewController.prepareDataSource(WithGallery: sender as? ImgurRoot)
         }
     }
 }

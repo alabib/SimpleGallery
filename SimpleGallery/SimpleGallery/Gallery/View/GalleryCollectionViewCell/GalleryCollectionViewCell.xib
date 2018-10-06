@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-JA-6KA">
-                        <rect key="frame" x="8" y="8" width="384" height="184"/>
+                        <rect key="frame" x="4" y="8" width="392" height="184"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-cQ-Yaf">
-                                <rect key="frame" x="0.0" y="0.0" width="384" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="392" height="140"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tO-tV-m8h">
-                                <rect key="frame" x="0.0" y="140" width="384" height="44"/>
+                                <rect key="frame" x="0.0" y="140" width="392" height="44"/>
                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mcB-xd-mZz"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJg-eX-3fs">
-                                <rect key="frame" x="0.0" y="0.0" width="384" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="392" height="140"/>
                                 <connections>
                                     <action selector="openImageAction:" destination="Z2a-ia-0AZ" eventType="touchUpOutside" id="vub-HV-lbB"/>
                                 </connections>
@@ -59,10 +59,10 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="hbo-JA-6KA" firstAttribute="leading" secondItem="Z2a-ia-0AZ" secondAttribute="leading" constant="8" id="47I-R4-nc2"/>
+                <constraint firstItem="hbo-JA-6KA" firstAttribute="leading" secondItem="Z2a-ia-0AZ" secondAttribute="leading" constant="4" id="47I-R4-nc2"/>
                 <constraint firstItem="hbo-JA-6KA" firstAttribute="top" secondItem="Z2a-ia-0AZ" secondAttribute="top" constant="8" id="UwU-wu-zF2"/>
                 <constraint firstAttribute="bottom" secondItem="hbo-JA-6KA" secondAttribute="bottom" constant="8" id="eJm-i8-kpH"/>
-                <constraint firstAttribute="trailing" secondItem="hbo-JA-6KA" secondAttribute="trailing" constant="8" id="sTp-fA-JPb"/>
+                <constraint firstAttribute="trailing" secondItem="hbo-JA-6KA" secondAttribute="trailing" constant="4" id="sTp-fA-JPb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="YEI-WX-o0f"/>
             <connections>

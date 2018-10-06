@@ -27,6 +27,13 @@ class GalleryListViewController: GalleryParentViewController {
 
     }
     
+    override func loadData() {
+        guard let tableView = tableView else {
+            return
+        }
+        tableView.reloadData()
+    }
+    
     // MARK: - Cells Animation Method
     func animateTable() {
         tableView.reloadData()

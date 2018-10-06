@@ -9,16 +9,19 @@
 import UIKit
 
 class GalleryParentViewController: UIViewController {
-
+    
     
     var gallery : ImgurRoot?
-    var galleryData : [ImgurData]?
     var galleryImages = [ImgurImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func prepareDataSource(WithGallery gallery: ImgurRoot?) {
+        galleryImages.removeAll()
         if gallery != nil {
+            self.gallery = gallery
             guard let galleryData  = (gallery?.data.filter{$0.images.count > 0})else {return}
-            
             for data in galleryData {
                 for image in data.images {
                     if !image.animated {
@@ -30,8 +33,11 @@ class GalleryParentViewController: UIViewController {
             showAlert(title: "", message: "SOMETHING_WENT_WRONG".localized(), viewController: self, closure: nil)
             return
         }
+    }
+    
+    func loadData() {
         
     }
     
-
+    
 }

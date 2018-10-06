@@ -11,9 +11,9 @@ import UIKit
 
 extension ServerManager
 {
-    func getGalleryWith(section:String, sortingCriteria: String)
+    func getGalleryWith(section:String, showViral: Bool)
     {
-        httpConnect(resource: ImgurRoot.resourceForGalleryWith(section:section, sortingCriteria: sortingCriteria), paramters: nil, complation:
+        httpConnect(resource: ImgurRoot.resourceForGalleryWith(section:section, showViral: showViral), paramters: nil, complation:
             { (json, data) in
                 if let jsonObject = json
                 {
