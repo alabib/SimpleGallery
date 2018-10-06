@@ -34,6 +34,7 @@
 		D4F7001B21675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */; };
 		D4F7001C21675FBA00DA3DBB /* ImgurProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */; };
 		D4FC57A82168BEE400ED42BF /* GridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */; };
+		D4FC57AC2168D27000ED42BF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC57AB2168D27000ED42BF /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurDescriptionAnnotation.swift; sourceTree = "<group>"; };
 		D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurProcessing.swift; sourceTree = "<group>"; };
 		D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlowLayout.swift; sourceTree = "<group>"; };
+		D4FC57AB2168D27000ED42BF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		DC2302C036B483CF202E841A /* Pods_SimpleGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,9 @@
 		D4B85240215E906E00D4DEAD /* SimpleGallery */ = {
 			isa = PBXGroup;
 			children = (
+				D4DE96FB215F9CC1000C06E8 /* Network */,
+				D4DE9702215F9D5B000C06E8 /* Utilities */,
+				D4FC57A92168D24700ED42BF /* About */,
 				D4F7001021675F9D00DA3DBB /* Gallery */,
 				D4B85241215E906E00D4DEAD /* AppDelegate.swift */,
 				D4B85245215E906E00D4DEAD /* Main.storyboard */,
@@ -207,8 +212,6 @@
 		D4F7001021675F9D00DA3DBB /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				D4DE96FB215F9CC1000C06E8 /* Network */,
-				D4DE9702215F9D5B000C06E8 /* Utilities */,
 				D41EAF682160A4E400D7EEC1 /* Controller */,
 				D47921642167C6B50020D5A4 /* View */,
 				D4F7000F21675F8900DA3DBB /* Model */,
@@ -222,6 +225,22 @@
 				D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */,
 			);
 			path = Layouts;
+			sourceTree = "<group>";
+		};
+		D4FC57A92168D24700ED42BF /* About */ = {
+			isa = PBXGroup;
+			children = (
+				D4FC57AA2168D25600ED42BF /* Controller */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		D4FC57AA2168D25600ED42BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4FC57AB2168D27000ED42BF /* AboutViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +376,7 @@
 				D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */,
 				D41EAF702160A68E00D7EEC1 /* GalleryListViewController.swift in Sources */,
 				D47921662167C6E60020D5A4 /* GalleryTableViewCell.swift in Sources */,
+				D4FC57AC2168D27000ED42BF /* AboutViewController.swift in Sources */,
 				D4F7001A21675FBA00DA3DBB /* ImgurData.swift in Sources */,
 				D41EAF6E2160A67800D7EEC1 /* GalleryParentViewController.swift in Sources */,
 				D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */,

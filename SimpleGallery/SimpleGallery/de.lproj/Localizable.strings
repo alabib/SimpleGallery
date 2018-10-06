@@ -13,3 +13,9 @@
 "LIST" = "Liste";
 "GRID" = "Gitter";
 "STAGGERED" = "Gestaffelt";
+
+
+"NAME" = "Name";
+"EMAIL" = "Email";
+"VERSION_NUMBER" = "Ausführung";
+"BUILD_NUMBER" = "Build";

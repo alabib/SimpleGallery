@@ -13,3 +13,9 @@
 "LIST" = "List";
 "GRID" = "Grid";
 "STAGGERED" = "Staggered";
+
+"NAME" = "Name";
+"EMAIL" = "Email";
+"VERSION_NUMBER" = "Version";
+"BUILD_NUMBER" = "Build";
+

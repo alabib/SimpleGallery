@@ -58,3 +58,10 @@ func setupRoundedCornerFor(_ view: UIView) {
     view.layer.masksToBounds = true
     view.clipsToBounds = true
 }
+
+func setupCirlceFor(_ view: UIView) {
+    view.layer.cornerRadius = view.frame.size.height/2
+    view.superview?.layoutIfNeeded()
+    view.layer.masksToBounds = true
+    view.clipsToBounds = true
+}

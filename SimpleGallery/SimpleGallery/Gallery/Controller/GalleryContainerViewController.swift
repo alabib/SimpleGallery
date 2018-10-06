@@ -57,4 +57,8 @@ class GalleryContainerViewController: UIViewController {
             filterWithClosure(self.selectedSection,self.viralSwitch.isOn)
         }
     }
+    @IBAction func aboutAction(_ sender: Any) {
+        guard let aboutViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController else {fatalError()}
+        self.navigationController?.pushViewController(aboutViewController, animated: true)
+    }
 }
