@@ -75,6 +75,9 @@ extension GalleryListViewController : UITableViewDataSource {
         
         let ImageObject = galleryImages[indexPath.row]
         cell.configCell(with: ImageObject)
+        cell.present = {[weak self] viewController in
+            self?.present(viewController, animated: true, completion: nil)
+        }
         return cell
     }
 }

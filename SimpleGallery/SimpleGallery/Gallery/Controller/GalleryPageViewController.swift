@@ -48,11 +48,6 @@ class GalleryPageViewController: UIPageViewController {
                 (subView as! UIScrollView).isScrollEnabled = false
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { succeeded, response in
             if succeeded {
                 
@@ -67,7 +62,6 @@ class GalleryPageViewController: UIPageViewController {
                 }
             }
         }
-        
     }
     
     private func getGallery(withSection section: String, showViral: Bool, completion: @escaping (Bool, Any?) -> Void) {

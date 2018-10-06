@@ -16,5 +16,8 @@ target 'SimpleGallery' do
     
     # Used for localization and in-app language switching.
     pod 'Localize-Swift'
+    
+    # Used for Viewing the Photos.
+    pod 'NYTPhotoViewer'
 
 end

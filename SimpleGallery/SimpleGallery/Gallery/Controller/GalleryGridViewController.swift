@@ -52,6 +52,9 @@ extension GalleryGridViewController: UICollectionViewDataSource {
         guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? GalleryCollectionViewCell else { fatalError() }
         let ImageObject = galleryImages[indexPath.row]
         cell.configCell(with: ImageObject)
+        cell.present = {[weak self] viewController in
+            self?.present(viewController, animated: true, completion: nil)
+        }
         return cell
     }
     

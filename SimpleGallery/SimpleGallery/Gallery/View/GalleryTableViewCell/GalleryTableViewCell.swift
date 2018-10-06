@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NYTPhotoViewer
 
 class GalleryTableViewCell: UITableViewCell {
 
@@ -14,6 +15,10 @@ class GalleryTableViewCell: UITableViewCell {
     @IBOutlet weak var galleryImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var openImageButton: UIButton!
+    
+    var present: ((_ viewController : UIViewController) -> ())?
+    
+    var imgurImage : ImgurImage?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +28,15 @@ class GalleryTableViewCell: UITableViewCell {
     
     @IBAction func openImageAction(_ sender: Any) {
         
+        let dataSource = newTimesBuildingDataSource()
+        let photosViewController = NYTPhotosViewController(dataSource: dataSource, initialPhoto: nil, delegate: self)
+        guard let presentClosure = present else {return}
+        presentClosure(photosViewController)
     }
     
     func configCell(with imgurImage: ImgurImage!) {
         
+        self.imgurImage = imgurImage
         if let description = imgurImage.descriptionField {
             descriptionLabel.text = description
         } else {
@@ -39,4 +49,40 @@ class GalleryTableViewCell: UITableViewCell {
         }
     }
     
+    func newTimesBuildingDataSource() -> NYTPhotoViewerArrayDataSource {
+        var photos = Array<NYTPhoto>()
+        let photo = Photo()
+        
+        photo.image = galleryImageView.image
+        photo.attributedCaptionSummary = attributedSummaryFromString(imgurImage?.descriptionField ?? "")
+        photos.append(photo)
+        
+        return NYTPhotoViewerArrayDataSource(photos: photos)
+    }
+    
+    func attributedSummaryFromString(_ summary : String) -> NSAttributedString {
+        return NSAttributedString(string: summary, attributes: [
+            .foregroundColor : UIColor.lightGray,
+            .font : UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+            ])
+    }
+    
+}
+
+// MARK: NYTPhotosViewControllerDelegate
+
+extension GalleryTableViewCell: NYTPhotosViewControllerDelegate {
+    
+    func photosViewController(_ photosViewController: NYTPhotosViewController, referenceViewFor photo: NYTPhoto) -> UIView? {
+        return galleryImageView
+    }
+    
+    func photosViewController(_ photosViewController: NYTPhotosViewController, maximumZoomScaleFor photo: NYTPhoto) -> CGFloat {
+        return 1.0
+    }
+    
+    func photosViewController(_ photosViewController: NYTPhotosViewController, captionViewRespectsSafeAreaFor photo: NYTPhoto) -> Bool {
+        return true
+    }
+
 }

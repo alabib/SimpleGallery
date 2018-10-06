@@ -37,7 +37,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJg-eX-3fs">
                                 <rect key="frame" x="0.0" y="0.0" width="392" height="140"/>
                                 <connections>
-                                    <action selector="openImageAction:" destination="Z2a-ia-0AZ" eventType="touchUpOutside" id="vub-HV-lbB"/>
+                                    <action selector="openImageAction:" destination="Z2a-ia-0AZ" eventType="touchUpInside" id="S0C-1T-kas"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,7 +69,7 @@
                 <outlet property="containerView" destination="hbo-JA-6KA" id="uoM-jd-VdY"/>
                 <outlet property="descriptionLabel" destination="8tO-tV-m8h" id="ihl-Wq-qOC"/>
                 <outlet property="galleryImageView" destination="cHx-cQ-Yaf" id="5Xb-ex-Adu"/>
-                <outlet property="openImageButton" destination="gJg-eX-3fs" id="h5c-iP-NQl"/>
+                <outlet property="openImageButton" destination="gJg-eX-3fs" id="GYi-Zs-ytq"/>
             </connections>
             <point key="canvasLocation" x="13" y="86"/>
         </collectionViewCell>

@@ -15,6 +15,7 @@
 		D41EAF722160A6A100D7EEC1 /* GalleryGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */; };
 		D47921662167C6E60020D5A4 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47921652167C6E60020D5A4 /* GalleryTableViewCell.swift */; };
 		D47921682167C6F60020D5A4 /* GalleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47921672167C6F60020D5A4 /* GalleryTableViewCell.xib */; };
+		D48373B02168E1870045FE21 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48373AF2168E1870045FE21 /* Photo.swift */; };
 		D496F589216818F8002221B1 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D496F588216818F8002221B1 /* GalleryCollectionViewCell.swift */; };
 		D496F58C2168190D002221B1 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D496F58B2168190D002221B1 /* GalleryCollectionViewCell.xib */; };
 		D4B85242215E906E00D4DEAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B85241215E906E00D4DEAD /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		D41EAF712160A6A100D7EEC1 /* GalleryGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryGridViewController.swift; sourceTree = "<group>"; };
 		D47921652167C6E60020D5A4 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 		D47921672167C6F60020D5A4 /* GalleryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryTableViewCell.xib; sourceTree = "<group>"; };
+		D48373AF2168E1870045FE21 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D496F588216818F8002221B1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D496F58B2168190D002221B1 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4B8523E215E906E00D4DEAD /* SimpleGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D48373AE2168E1700045FE21 /* Imgur */ = {
+			isa = PBXGroup;
+			children = (
+				D4F7001121675FBA00DA3DBB /* ImgurRoot.swift */,
+				D4F7001421675FBA00DA3DBB /* ImgurData.swift */,
+				D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */,
+				D4F7001321675FBA00DA3DBB /* ImgurImage.swift */,
+				D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */,
+				D4F7001221675FBA00DA3DBB /* ImgurTag.swift */,
+			);
+			path = Imgur;
+			sourceTree = "<group>";
+		};
 		D496F58A216818FE002221B1 /* GalleryCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,12 +214,8 @@
 		D4F7000F21675F8900DA3DBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D4F7001121675FBA00DA3DBB /* ImgurRoot.swift */,
-				D4F7001421675FBA00DA3DBB /* ImgurData.swift */,
-				D4F7001521675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift */,
-				D4F7001321675FBA00DA3DBB /* ImgurImage.swift */,
-				D4F7001621675FBA00DA3DBB /* ImgurProcessing.swift */,
-				D4F7001221675FBA00DA3DBB /* ImgurTag.swift */,
+				D48373AE2168E1700045FE21 /* Imgur */,
+				D48373AF2168E1870045FE21 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,8 +359,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleGallery/Pods-SimpleGallery-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/NYTPhotoViewer/NYTPhotoViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -357,8 +370,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NYTPhotoViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +406,7 @@
 				D4F7001B21675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift in Sources */,
 				D4DE9704215F9D6F000C06E8 /* Constants.swift in Sources */,
 				D496F589216818F8002221B1 /* GalleryCollectionViewCell.swift in Sources */,
+				D48373B02168E1870045FE21 /* Photo.swift in Sources */,
 				D4F7001C21675FBA00DA3DBB /* ImgurProcessing.swift in Sources */,
 				D41EAF6C2160A57900D7EEC1 /* GalleryPageViewController.swift in Sources */,
 				D4DE9706215F9D8C000C06E8 /* Utilities.swift in Sources */,
