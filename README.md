@@ -18,3 +18,7 @@ Used to create progress HUD.
 ### Localize-Swift
 
 Used for localization and in-app language switching.
+
+### NYTPhotoViewer
+
+Used for Viewing the Photos
