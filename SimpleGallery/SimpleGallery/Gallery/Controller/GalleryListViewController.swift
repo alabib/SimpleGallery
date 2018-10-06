@@ -72,7 +72,6 @@ extension GalleryListViewController : UITableViewDataSource {
     {
         
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier , for: indexPath) as? GalleryTableViewCell else { fatalError() }
-        
         let ImageObject = galleryImages[indexPath.row]
         cell.configCell(with: ImageObject)
         cell.present = {[weak self] viewController in

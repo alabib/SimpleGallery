@@ -37,7 +37,7 @@ class GalleryPageViewController: UIPageViewController {
     var stationContainerViewController : GalleryContainerViewController!
     var listViewController : GalleryListViewController!
     var gridViewController : GalleryGridViewController!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
