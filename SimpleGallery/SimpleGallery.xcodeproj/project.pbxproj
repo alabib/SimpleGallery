@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5152EEB98CFD82907294AADA /* Pods_SimpleGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2302C036B483CF202E841A /* Pods_SimpleGallery.framework */; };
-		D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */; };
+		D41EAF6A2160A50B00D7EEC1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41EAF692160A50B00D7EEC1 /* GalleryViewController.swift */; };
 		D48373B02168E1870045FE21 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48373AF2168E1870045FE21 /* Photo.swift */; };
 		D496F589216818F8002221B1 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D496F588216818F8002221B1 /* GalleryCollectionViewCell.swift */; };
 		D496F58C2168190D002221B1 /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D496F58B2168190D002221B1 /* GalleryCollectionViewCell.xib */; };
@@ -23,6 +23,10 @@
 		D4DE9706215F9D8C000C06E8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DE9705215F9D8C000C06E8 /* Utilities.swift */; };
 		D4DE970D215F9EFA000C06E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DE970B215F9EFA000C06E8 /* Localizable.strings */; };
 		D4E30BDC2169DF5E00BF38F6 /* ListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E30BDB2169DF5E00BF38F6 /* ListFlowLayout.swift */; };
+		D4E30BDE2169F3E300BF38F6 /* StaggeredFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E30BDD2169F3E300BF38F6 /* StaggeredFlowLayout.swift */; };
+		D4E30BE02169FB8B00BF38F6 /* GalleryViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E30BDF2169FB8B00BF38F6 /* GalleryViewController+UICollectionViewDataSource.swift */; };
+		D4E30BE22169FBE800BF38F6 /* GalleryViewController+StaggeredFlowLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E30BE12169FBE800BF38F6 /* GalleryViewController+StaggeredFlowLayoutDelegate.swift */; };
+		D4E30BE4216A027D00BF38F6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E30BE3216A027D00BF38F6 /* Enums.swift */; };
 		D4F7001721675FBA00DA3DBB /* ImgurRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001121675FBA00DA3DBB /* ImgurRoot.swift */; };
 		D4F7001821675FBA00DA3DBB /* ImgurTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001221675FBA00DA3DBB /* ImgurTag.swift */; };
 		D4F7001921675FBA00DA3DBB /* ImgurImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F7001321675FBA00DA3DBB /* ImgurImage.swift */; };
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		140BC468CA9E7212C4F6223F /* Pods-SimpleGallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGallery/Pods-SimpleGallery.debug.xcconfig"; sourceTree = "<group>"; };
 		1C445457EA2D213EF8CEFBBB /* Pods-SimpleGallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleGallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleGallery/Pods-SimpleGallery.release.xcconfig"; sourceTree = "<group>"; };
-		D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryContainerViewController.swift; sourceTree = "<group>"; };
+		D41EAF692160A50B00D7EEC1 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D48373AF2168E1870045FE21 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D496F588216818F8002221B1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D496F58B2168190D002221B1 /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -54,6 +58,10 @@
 		D4DE970C215F9EFA000C06E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4DE970F215F9F22000C06E8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D4E30BDB2169DF5E00BF38F6 /* ListFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFlowLayout.swift; sourceTree = "<group>"; };
+		D4E30BDD2169F3E300BF38F6 /* StaggeredFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredFlowLayout.swift; sourceTree = "<group>"; };
+		D4E30BDF2169FB8B00BF38F6 /* GalleryViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		D4E30BE12169FBE800BF38F6 /* GalleryViewController+StaggeredFlowLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GalleryViewController+StaggeredFlowLayoutDelegate.swift"; sourceTree = "<group>"; };
+		D4E30BE3216A027D00BF38F6 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D4F7001121675FBA00DA3DBB /* ImgurRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurRoot.swift; sourceTree = "<group>"; };
 		D4F7001221675FBA00DA3DBB /* ImgurTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurTag.swift; sourceTree = "<group>"; };
 		D4F7001321675FBA00DA3DBB /* ImgurImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgurImage.swift; sourceTree = "<group>"; };
@@ -97,7 +105,9 @@
 		D41EAF682160A4E400D7EEC1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D41EAF692160A50B00D7EEC1 /* GalleryContainerViewController.swift */,
+				D41EAF692160A50B00D7EEC1 /* GalleryViewController.swift */,
+				D4E30BDF2169FB8B00BF38F6 /* GalleryViewController+UICollectionViewDataSource.swift */,
+				D4E30BE12169FBE800BF38F6 /* GalleryViewController+StaggeredFlowLayoutDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,6 +193,7 @@
 			children = (
 				D4DE9703215F9D6F000C06E8 /* Constants.swift */,
 				D4DE9705215F9D8C000C06E8 /* Utilities.swift */,
+				D4E30BE3216A027D00BF38F6 /* Enums.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 			children = (
 				D4FC57A72168BEE400ED42BF /* GridFlowLayout.swift */,
 				D4E30BDB2169DF5E00BF38F6 /* ListFlowLayout.swift */,
+				D4E30BDD2169F3E300BF38F6 /* StaggeredFlowLayout.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -364,19 +376,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D41EAF6A2160A50B00D7EEC1 /* GalleryContainerViewController.swift in Sources */,
+				D41EAF6A2160A50B00D7EEC1 /* GalleryViewController.swift in Sources */,
 				D4FC57AC2168D27000ED42BF /* AboutViewController.swift in Sources */,
 				D4F7001A21675FBA00DA3DBB /* ImgurData.swift in Sources */,
 				D4DE9701215F9D2B000C06E8 /* ServerManager.swift in Sources */,
 				D4DE96FF215F9D04000C06E8 /* ServerManagerCalls.swift in Sources */,
 				D4FC57A82168BEE400ED42BF /* GridFlowLayout.swift in Sources */,
+				D4E30BDE2169F3E300BF38F6 /* StaggeredFlowLayout.swift in Sources */,
 				D4DE96FD215F9CE2000C06E8 /* ServerManagerExtensions.swift in Sources */,
 				D4F7001721675FBA00DA3DBB /* ImgurRoot.swift in Sources */,
 				D4F7001821675FBA00DA3DBB /* ImgurTag.swift in Sources */,
+				D4E30BE4216A027D00BF38F6 /* Enums.swift in Sources */,
 				D4F7001921675FBA00DA3DBB /* ImgurImage.swift in Sources */,
 				D4B85242215E906E00D4DEAD /* AppDelegate.swift in Sources */,
 				D4F7001B21675FBA00DA3DBB /* ImgurDescriptionAnnotation.swift in Sources */,
 				D4DE9704215F9D6F000C06E8 /* Constants.swift in Sources */,
+				D4E30BE02169FB8B00BF38F6 /* GalleryViewController+UICollectionViewDataSource.swift in Sources */,
+				D4E30BE22169FBE800BF38F6 /* GalleryViewController+StaggeredFlowLayoutDelegate.swift in Sources */,
 				D496F589216818F8002221B1 /* GalleryCollectionViewCell.swift in Sources */,
 				D48373B02168E1870045FE21 /* Photo.swift in Sources */,
 				D4F7001C21675FBA00DA3DBB /* ImgurProcessing.swift in Sources */,

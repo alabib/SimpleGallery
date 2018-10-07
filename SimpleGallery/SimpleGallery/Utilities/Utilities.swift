@@ -55,6 +55,8 @@ func setupShadowFor(_ view: UIView) {
 
 func setupRoundedCornerFor(_ view: UIView) {
     view.layer.cornerRadius = 4
+    view.layer.borderColor = UIColor(red: 83/255, green: 27/255, blue: 147/255, alpha: 1.0).cgColor
+    view.layer.borderWidth = 1
     view.layer.masksToBounds = true
     view.clipsToBounds = true
 }

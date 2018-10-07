@@ -16,6 +16,9 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var openImageButton: UIButton!
     
+    @IBOutlet weak var galleryImageViewToConntainerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionLabelHeightConstraint: NSLayoutConstraint!
+    
     var present: ((_ viewController : UIViewController) -> ())?
     var imgurImage : ImgurImage?
     
@@ -29,8 +32,13 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         self.imgurImage = imgurImage
         if let description = imgurImage.descriptionField {
             descriptionLabel.text = description
+            descriptionLabel.isHidden = false
+            galleryImageViewToConntainerViewBottomConstraint.priority = UILayoutPriority(rawValue: 250)
+            descriptionLabelHeightConstraint.priority = UILayoutPriority(rawValue: 500)
         } else {
-            descriptionLabel.text = ""
+            descriptionLabel.isHidden = true
+            galleryImageViewToConntainerViewBottomConstraint.priority = UILayoutPriority(rawValue: 500)
+            descriptionLabelHeightConstraint.priority = UILayoutPriority(rawValue: 250)
         }
         
         if let imageUrlString = imgurImage.link {

@@ -9,16 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gallery Container View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="gn7-uc-tHn">
             <objects>
-                <viewController id="bYm-uC-5jM" customClass="GalleryContainerViewController" customModule="SimpleGallery" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bYm-uC-5jM" customClass="GalleryViewController" customModule="SimpleGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O7t-cg-7L3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wt3-VO-bQK">
                                 <rect key="frame" x="306" y="72" width="51" height="31"/>
+                                <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="showViralAction:" destination="bYm-uC-5jM" eventType="valueChanged" id="atj-tT-O6H"/>
                                 </connections>
@@ -28,7 +29,9 @@
                                 <segments>
                                     <segment title="List"/>
                                     <segment title="Grid"/>
+                                    <segment title="Staggered"/>
                                 </segments>
+                                <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="layoutChanged:" destination="bYm-uC-5jM" eventType="valueChanged" id="JD9-BG-d9w"/>
                                 </connections>
@@ -78,11 +81,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q6R-ch-hSf">
                         <barButtonItem key="leftBarButtonItem" title="About" id="LdH-xv-aDJ">
+                            <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="aboutAction:" destination="bYm-uC-5jM" id="yvn-md-6gE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Filter" id="ugt-bD-bOh">
+                            <color key="tintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="filterAction:" destination="bYm-uC-5jM" id="ZuU-Ib-TtB"/>
                             </connections>

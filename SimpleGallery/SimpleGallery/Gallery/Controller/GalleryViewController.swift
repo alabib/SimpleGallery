@@ -9,58 +9,46 @@
 import UIKit
 import SVProgressHUD
 
-enum LayoutType : String {
-    case gridLayout = "gridLayout"
-    case listLayout = "listLayout"
-}
-
-enum LayoutSegue : String {
-    case grid = "Grid"
-    case list = "List"
-}
-
-enum ImgurFilterSections : String {
-    case hot = "hot"
-    case top = "top"
-}
-
-class GalleryContainerViewController: UIViewController {
+class GalleryViewController: UIViewController {
     
-    @IBOutlet weak var layoutSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var viralSwitch: UISwitch!
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Outlets
+    @IBOutlet private weak var layoutSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var viralSwitch: UISwitch!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
-    let gridFlowLayout = GridFlowLayout()
-    let listFlowLayout = ListFlowLayout()
+    private let gridFlowLayout = GridFlowLayout()
+    private let listFlowLayout = ListFlowLayout()
+    private let staggeredFlowLayout = StaggeredFlowLayout()
     
     var gallery : ImgurRoot?
     var galleryImages = [ImgurImage]()
     private var selectedSection = ImgurFilterSections.hot.rawValue
-    let collectionViewCellIdentifier = "GalleryCollectionViewCell"
+    internal let collectionViewCellIdentifier = "GalleryCollectionViewCell"
+    
+    // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "GALLERY".localized()
         self.layoutSegmentedControl.setTitle("LIST".localized(), forSegmentAt: 0)
         self.layoutSegmentedControl.setTitle("GRID".localized(), forSegmentAt: 1)
+        self.layoutSegmentedControl.setTitle("STAGGERED".localized(), forSegmentAt: 2)
         
         collectionView.register(UINib.init(nibName: collectionViewCellIdentifier, bundle: Bundle.main), forCellWithReuseIdentifier: collectionViewCellIdentifier)
         applyGridLayout()
         NotificationCenter.default.addObserver(self, selector: #selector(applyGridLayout), name: UIDevice.orientationDidChangeNotification, object: nil)
         collectionView.dataSource = self
-        
-        getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { [weak self] succeeded, response in
+        staggeredFlowLayout.delegate = self
+        getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { [unowned self] succeeded, response in
             if succeeded {
                 
                 guard let gallery = response as? ImgurRoot else {return}
-                self?.prepareDataSource(WithGallery: gallery)
-                self?.loadData()
+                self.loadData(WithGallery: gallery)
             }
         }
-        collectionView.reloadData()
     }
     
-    
+    // MARK: Network Call
     func getGallery(withSection section: String, showViral: Bool, completion: @escaping (Bool, Any?) -> Void) {
         
         SVProgressHUD.show()
@@ -86,25 +74,25 @@ class GalleryContainerViewController: UIViewController {
         
     }
     
-    func loadData() {
+    // MARK: Helper Methods
+    func loadData(WithGallery gallery: ImgurRoot?) {
+        prepareDataSource(WithGallery: gallery)
         guard let collectionView = collectionView else { return }
         collectionView.reloadData()
     }
     
     @objc func applyGridLayout() {
-        UIView.animate(withDuration: 0.2) { [weak self] () -> Void in
-            self?.collectionView.collectionViewLayout.invalidateLayout()
+        UIView.animate(withDuration: 0.5) { [unowned self] () -> Void in
+            self.collectionView.collectionViewLayout.invalidateLayout()
             
-            guard let listFlowLayout = self?.listFlowLayout else {return}
-            guard let gridFlowLayout = self?.gridFlowLayout else {return}
-            switch self?.layoutSegmentedControl.selectedSegmentIndex {
+            switch self.layoutSegmentedControl.selectedSegmentIndex {
             case 0:
-                self?.collectionView.setCollectionViewLayout(listFlowLayout, animated: true)
+                self.collectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
             case 1:
-                self?.collectionView.setCollectionViewLayout(gridFlowLayout, animated: true)
-            case .none:
-                fatalError()
-            case .some(_):
+                self.collectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
+            case 2:
+                self.collectionView.setCollectionViewLayout(self.staggeredFlowLayout, animated: true)
+            default:
                 fatalError()
             }
         }
@@ -129,30 +117,29 @@ class GalleryContainerViewController: UIViewController {
     }
     
     func filterWith(section : String, showViral : Bool) {
-        getGallery(withSection: section, showViral: showViral) { [weak self] succeeded, response in
+        getGallery(withSection: section, showViral: showViral) { [unowned self] succeeded, response in
             if succeeded {
                 guard let gallery = response as? ImgurRoot else {return}
-                self?.prepareDataSource(WithGallery: gallery)
-                self?.loadData()
+                self.loadData(WithGallery: gallery)
             }
         }
     }
     
-    
+    // MARK: IBActions
     @IBAction func layoutChanged(_ sender: Any) {
-            applyGridLayout()
+        applyGridLayout()
     }
     
     @IBAction func filterAction(_ sender: Any) {
         let alert = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Hot", style: .default , handler:{ [weak self] (UIAlertAction)in
-            self?.selectedSection = ImgurFilterSections.hot.rawValue
-            self?.filterWith(section: self?.selectedSection ?? ImgurFilterSections.hot.rawValue, showViral: self?.viralSwitch.isOn ?? false)
+        alert.addAction(UIAlertAction(title: "Hot", style: .default , handler:{ [unowned self] (UIAlertAction)in
+            self.selectedSection = ImgurFilterSections.hot.rawValue
+            self.filterWith(section: self.selectedSection, showViral: self.viralSwitch.isOn)
             
         }))
-        alert.addAction(UIAlertAction(title: "Top", style: .default , handler:{ [weak self] (UIAlertAction)in
-            self?.selectedSection = ImgurFilterSections.top.rawValue
-            self?.filterWith(section: self?.selectedSection ?? ImgurFilterSections.top.rawValue, showViral: self?.viralSwitch.isOn ?? false)
+        alert.addAction(UIAlertAction(title: "Top", style: .default , handler:{ [unowned self] (UIAlertAction)in
+            self.selectedSection = ImgurFilterSections.top.rawValue
+            self.filterWith(section: self.selectedSection, showViral: self.viralSwitch.isOn)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
         }))
@@ -166,23 +153,4 @@ class GalleryContainerViewController: UIViewController {
         guard let aboutViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController else {fatalError()}
         self.navigationController?.pushViewController(aboutViewController, animated: true)
     }
-}
-
-extension GalleryContainerViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return galleryImages.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellIdentifier, for: indexPath) as? GalleryCollectionViewCell else { fatalError() }
-        let ImageObject = galleryImages[indexPath.row]
-        cell.configCell(with: ImageObject)
-        cell.present = {[weak self] viewController in
-            self?.present(viewController, animated: true, completion: nil)
-        }
-        return cell
-    }
-    
 }

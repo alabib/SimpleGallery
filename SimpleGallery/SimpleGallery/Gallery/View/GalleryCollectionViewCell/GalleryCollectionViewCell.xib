@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="140" width="392" height="44"/>
                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mcB-xd-mZz"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="44" id="mcB-xd-mZz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,6 +53,7 @@
                             <constraint firstItem="cHx-cQ-Yaf" firstAttribute="top" secondItem="hbo-JA-6KA" secondAttribute="top" id="h3C-q9-cxW"/>
                             <constraint firstItem="gJg-eX-3fs" firstAttribute="centerY" secondItem="cHx-cQ-Yaf" secondAttribute="centerY" id="kDP-Vg-bKh"/>
                             <constraint firstAttribute="bottom" secondItem="8tO-tV-m8h" secondAttribute="bottom" id="lpJ-kj-s9a"/>
+                            <constraint firstAttribute="bottom" secondItem="cHx-cQ-Yaf" secondAttribute="bottom" priority="250" id="tb8-30-11c"/>
                             <constraint firstAttribute="trailing" secondItem="8tO-tV-m8h" secondAttribute="trailing" id="wyf-Ao-5HU"/>
                         </constraints>
                     </view>
@@ -68,7 +69,9 @@
             <connections>
                 <outlet property="containerView" destination="hbo-JA-6KA" id="uoM-jd-VdY"/>
                 <outlet property="descriptionLabel" destination="8tO-tV-m8h" id="ihl-Wq-qOC"/>
+                <outlet property="descriptionLabelHeightConstraint" destination="mcB-xd-mZz" id="ndd-U5-oVv"/>
                 <outlet property="galleryImageView" destination="cHx-cQ-Yaf" id="5Xb-ex-Adu"/>
+                <outlet property="galleryImageViewToConntainerViewBottomConstraint" destination="tb8-30-11c" id="2eY-Tq-fqT"/>
                 <outlet property="openImageButton" destination="gJg-eX-3fs" id="GYi-Zs-ytq"/>
             </connections>
             <point key="canvasLocation" x="13" y="86"/>
