@@ -1,15 +1,14 @@
 //
-//  GridFlowLayout.swift
+//  ListFlowLayout.swift
 //  SimpleGallery
 //
-//  Created by Ahmed Labib on 10/6/18.
+//  Created by Ahmed Labib on 10/7/18.
 //  Copyright © 2018 Ahmed Labib. All rights reserved.
 //
 
 import UIKit
 
-class GridFlowLayout: UICollectionViewFlowLayout {
-    
+class ListFlowLayout: UICollectionViewFlowLayout {
     let itemHeight: CGFloat = 200
     
     override init() {
@@ -17,6 +16,13 @@ class GridFlowLayout: UICollectionViewFlowLayout {
         setupLayout()
     }
     
+    /**
+     Init method
+     
+     - parameter aDecoder: aDecoder
+     
+     - returns: self
+     */
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupLayout()
@@ -32,7 +38,7 @@ class GridFlowLayout: UICollectionViewFlowLayout {
     }
     
     func itemWidth() -> CGFloat {
-        return (collectionView!.frame.width/2) - 2
+        return collectionView!.frame.width
     }
     
     override var itemSize: CGSize {
@@ -47,5 +53,4 @@ class GridFlowLayout: UICollectionViewFlowLayout {
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint) -> CGPoint {
         return collectionView!.contentOffset
     }
-    
 }
