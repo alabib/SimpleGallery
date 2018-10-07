@@ -13,7 +13,10 @@
 "LIST" = "Liste";
 "GRID" = "Gitter";
 "STAGGERED" = "Gestaffelt";
-
+"SELECT" = "Selektieren";
+"HOT" = "Heiß";
+"TOP" = "Top";
+"CANCEL" = "Stornieren";
 
 "NAME" = "Name";
 "EMAIL" = "Email";

@@ -41,7 +41,6 @@ class GalleryViewController: UIViewController {
         staggeredFlowLayout.delegate = self
         getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { [unowned self] succeeded, response in
             if succeeded {
-                
                 guard let gallery = response as? ImgurRoot else {return}
                 self.loadData(WithGallery: gallery)
             }
@@ -131,17 +130,21 @@ class GalleryViewController: UIViewController {
     }
     
     @IBAction func filterAction(_ sender: Any) {
-        let alert = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Hot", style: .default , handler:{ [unowned self] (UIAlertAction)in
+        let alert = UIAlertController(title: "SELECT".localized(), message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "HOT".localized(), style: .default , handler:{ [unowned self] (UIAlertAction) in
+            
             self.selectedSection = ImgurFilterSections.hot.rawValue
             self.filterWith(section: self.selectedSection, showViral: self.viralSwitch.isOn)
-            
         }))
-        alert.addAction(UIAlertAction(title: "Top", style: .default , handler:{ [unowned self] (UIAlertAction)in
+        
+        alert.addAction(UIAlertAction(title: "TOP".localized(), style: .default , handler:{ [unowned self] (UIAlertAction) in
+            
             self.selectedSection = ImgurFilterSections.top.rawValue
             self.filterWith(section: self.selectedSection, showViral: self.viralSwitch.isOn)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
+        
+        alert.addAction(UIAlertAction(title: "CANCEL".localized(), style: .cancel, handler:{ (UIAlertAction)in
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -149,6 +152,7 @@ class GalleryViewController: UIViewController {
     @IBAction func showViralAction(_ sender: Any) {
         filterWith(section: self.selectedSection, showViral: self.viralSwitch.isOn)
     }
+    
     @IBAction func aboutAction(_ sender: Any) {
         guard let aboutViewController = self.storyboard?.instantiateViewController(withIdentifier: "AboutViewController") as? AboutViewController else {fatalError()}
         self.navigationController?.pushViewController(aboutViewController, animated: true)

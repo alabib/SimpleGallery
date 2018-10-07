@@ -13,6 +13,10 @@
 "LIST" = "List";
 "GRID" = "Grid";
 "STAGGERED" = "Staggered";
+"SELECT" = "Select";
+"HOT" = "Hot";
+"TOP" = "Top";
+"CANCEL" = "Cancel";
 
 "NAME" = "Name";
 "EMAIL" = "Email";
