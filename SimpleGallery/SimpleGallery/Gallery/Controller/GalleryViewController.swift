@@ -39,7 +39,7 @@ class GalleryViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(applyGridLayout), name: UIDevice.orientationDidChangeNotification, object: nil)
         collectionView.dataSource = self
         staggeredFlowLayout.delegate = self
-        getGallery(withSection: ImgurFilterSections.top.rawValue, showViral: true) { [unowned self] succeeded, response in
+        getGallery(withSection: selectedSection, showViral: true) { [unowned self] succeeded, response in
             if succeeded {
                 guard let gallery = response as? ImgurRoot else {return}
                 self.loadData(WithGallery: gallery)
@@ -102,13 +102,7 @@ class GalleryViewController: UIViewController {
         if gallery != nil {
             self.gallery = gallery
             guard let galleryData  = (gallery?.data.filter{$0.images.count > 0})else {return}
-            for data in galleryData {
-                for image in data.images {
-                    if !image.animated {
-                        galleryImages.append(image)
-                    }
-                }
-            }
+            galleryImages.append(contentsOf: galleryData.flatMap{$0.images.filter{!$0.animated}})
         } else {
             showAlert(title: "", message: "SOMETHING_WENT_WRONG".localized(), viewController: self, closure: nil)
             return
